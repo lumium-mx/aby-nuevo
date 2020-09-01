@@ -15,6 +15,7 @@ class CreateAbyReingresoTable extends Migration
     {
         Schema::create('aby_reingreso', function (Blueprint $table) {
             $table->id();
+            
             $table->timestamps();
         });
     }

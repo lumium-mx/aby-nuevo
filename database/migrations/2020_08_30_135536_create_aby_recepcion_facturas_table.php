@@ -15,6 +15,11 @@ class CreateAbyRecepcionFacturasTable extends Migration
     {
         Schema::create('aby_recepcionFacturas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('aby_proveedores_id');
+            $table->integer('folio');
+            $table->boolean('estaPendiente');
+            $table->boolean('estaPagada');
+            $table->float('monto');
             $table->timestamps();
         });
     }

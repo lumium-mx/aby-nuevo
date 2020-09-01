@@ -15,6 +15,7 @@ class CreateAbySalidasTable extends Migration
     {
         Schema::create('aby_salidas', function (Blueprint $table) {
             $table->id();
+            $table->float('cantidadEntregada');
             $table->timestamps();
         });
     }

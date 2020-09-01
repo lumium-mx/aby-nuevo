@@ -15,12 +15,12 @@ class CreateAbyCompraSolicitudesTable extends Migration
     {
         Schema::create('aby_compraSolicitudes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('aby_clientes_id');
+            $table->unsignedBigInteger('aby_pedidos_id');
             $table->unsignedBigInteger('aby_articulos_id');
             $table->float('cantidad');
-            $table->date('fPedido');
-            $table->date('fEntrega');
-            $table->foreign('aby_clientes_id')->references('id')->on('aby_clientes');
+            $table->date('fSolicitud');
+            $table->date('fEntrada');
+            $table->foreign('aby_pedidos_id')->references('id')->on('aby_pedidos');
             $table->foreign('aby_articulos_id')->references('id')->on('aby_articulos');
             $table->timestamps();
         });

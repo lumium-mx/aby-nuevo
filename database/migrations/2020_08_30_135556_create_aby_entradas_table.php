@@ -15,6 +15,9 @@ class CreateAbyEntradasTable extends Migration
     {
         Schema::create('aby_entradas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('aby_compraOrdenes_id');
+            $table->float('cantidadRecibida');
+            $table->foreign('aby_compraOrdenes_id')->references('id')->on('aby_compraOrdenes');
             $table->timestamps();
         });
     }
