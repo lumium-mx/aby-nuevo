@@ -18,9 +18,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('register', 'Api\AuthController@register');
+Route::post('testOauth', 'Api\AuthController@testOauth');
+
 //------ Autenticacion con OAuth -------------------------------------->>>>>
 // Agregado para poner la ruta de registro de usuarios de OAuth
 Route::group(['middleware'=>'auth:api'], function(){
-  Route::post('register', 'Api\AuthController@register');
-  Route::post('testOauth', 'Api\AuthController@testOauth');
+
+});
+
+
+Route::group(['middleware' => ['cors']], function () {
+    //Rutas a las que se permitirá acceso
+    Route::post('oauth/token', 'Api\AuthController@mytoken');
 });

@@ -13,8 +13,6 @@ class AuthController extends Controller
 {
   //Agregar validador para la autenticacion con OAuth
   public function register (Request $request){
-
-    //Agregar validador para la autenticacion con OAuth
     $validator = Validator::make($request->all(), [
       'name' => 'required',
       'email' => 'required|email',
@@ -45,4 +43,5 @@ class AuthController extends Controller
           'user'=> $user
       ], 200);
   }
+
 }
