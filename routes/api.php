@@ -31,4 +31,5 @@ Route::group(['middleware'=>'auth:api'], function(){
 Route::group(['middleware' => ['cors']], function () {
     //Rutas a las que se permitirá acceso
     Route::post('oauth/token', 'Api\AuthController@mytoken');
+    Route::post('oauth/clients', 'Api\AuthController@mytoken');
 });
