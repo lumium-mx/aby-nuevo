@@ -20,6 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('register', 'Api\AuthController@register');
 Route::post('testOauth', 'Api\AuthController@testOauth');
+Route::post('catCategorias', 'HomeController@catCategorias');
+
 
 //------ Autenticacion con OAuth -------------------------------------->>>>>
 // Agregado para poner la ruta de registro de usuarios de OAuth

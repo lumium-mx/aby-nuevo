@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:api');
     }
 
     /**
@@ -24,5 +24,13 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function catCategorias(Request $request) {
+      $input = $request->all();
+
+      $datos = ['nombre' => $input['nombre']];
+
+      return response()->json($datos);
     }
 }
