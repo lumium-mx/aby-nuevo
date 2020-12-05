@@ -20,3 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/esferas', function () {
+    return view('holamundo');
+});
+Route::get('/temporal', function () {
+    return view('temporal');
+});
+Route::get('CRUD_abyArticuloCategorias/index', function () {
+    return view('abyArticuloCategorias.index');
+});
